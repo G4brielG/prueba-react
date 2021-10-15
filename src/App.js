@@ -4,6 +4,7 @@ import Login from "./components/pages/Login";
 import Home from "./components/pages/Home";
 import Posts from "./components/pages/Posts";
 import Users from "./components/pages/Users";
+import Hook from "./components/pages/Hook";
 
 /*const decirSaludo = (params) => {
   alert(`Hola ${params}`);
@@ -21,6 +22,7 @@ function App() {
         <Route exact path="/posts" component={Posts} />
         <Route exact path="/users" component={Users} />
         <Route exact path="/login" component={Login} />
+        <Route exact path="/hook" component={Hook} />
       </Switch>
     );
   };
