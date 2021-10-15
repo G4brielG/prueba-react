@@ -14,6 +14,14 @@ const Hook = () => {
   const restar = () => {
     setCount(count - 1);
   };
+
+  //array
+  const [arrayA, setArray] = useState([]);
+
+  const handleChangeArray = () => {
+    setArray([...arrayA, arrayA.length]);
+  };
+
   return (
     <>
       <div className="App">
@@ -33,6 +41,14 @@ const Hook = () => {
         <button onClick={restar} className="btn btn-primary">
           RESTAR
         </button>
+        <br></br>
+        <input />
+        <button onClick={handleChangeArray} className="btn btn-success">
+          Add
+        </button>
+        {arrayA.map((e) => {
+          return <h1>{e}</h1>;
+        })}
       </div>
     </>
   );
