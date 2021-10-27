@@ -36,6 +36,11 @@ const Navbar = () => {
                 Users
               </Link>
             </li>
+            <li>
+              <Link className="nav-link" to="/map">
+                Mapa
+              </Link>
+            </li>
             <li className="nav-item">
               <Link className="nav-link" to="/login">
                 Login
