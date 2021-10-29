@@ -2,31 +2,40 @@ import React from "react";
 import { useEffect, useState } from "react";
 
 const Posts = () => {
-  const [state, setState] = useState(false);
   const [data, setData] = useState([]);
 
   const fetchData = async () => {
     try {
-      const data = await fetch("https://jsonplaceholder.typicode.com/todos/");
+      const data = await fetch(
+        "https://equipo-server.herokuapp.com/estudiante/"
+      );
       const res = await data.json();
-      setData(res);
+      handleRenderData(res);
     } catch (error) {
       console.log("Hubo un error en la petición. " + error);
     }
   };
 
+  const handleRenderData = (res) => {
+    setData(res[0].datos_personales.nombre_apellido);
+    res.map((e) => console.log(e));
+    // <p key={i}>{e.datos_personales.nombre_apellido}</p>
+  };
+
   useEffect(() => {
-    console.log("cambió el estado, activamos el useEffect");
     fetchData();
-  }, [state]);
+  });
   return (
     <>
-      {data.map((e, i) => {
-        return <p key={i}>{e.title}</p>;
-      })}
-      <button onClick={() => setState(!state)} className="btn-info">
-        cambiar
-      </button>
+      <div>
+        <label>Nombre:</label>
+        <br></br>
+        <input type="text" value={data}></input>
+        <br></br>
+        <label>correo:</label>
+        <br></br>
+        <input type="text" value={data}></input>
+      </div>
     </>
   );
 };
