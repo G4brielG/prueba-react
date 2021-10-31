@@ -11,7 +11,6 @@ const Posts = () => {
       );
       const res = await data.json();
       setDatos(res)
-      console.log(res)
     } catch (error) {
       console.log("Hubo un error en la petición. " + error);
     }
@@ -22,7 +21,6 @@ const Posts = () => {
   }, []);
   return (
     <>
-      <ul>
         {
           datos.map(item => (
             <div key={item._id}>
@@ -53,7 +51,6 @@ const Posts = () => {
             </div>
           ))
         }
-      </ul>
     </>
   );
 };
