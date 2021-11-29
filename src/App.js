@@ -6,6 +6,7 @@ import Posts from "./components/pages/Posts";
 import Users from "./components/pages/Users";
 import Hook from "./components/pages/Hook";
 import GoogleMap from "./components/pages/Map";
+import Registro_profesional from "./components/pages/Registro_profesional";
 
 /*const decirSaludo = (params) => {
   alert(`Hola ${params}`);
@@ -26,6 +27,11 @@ function App() {
           <Route exact path="/login" component={Login} />
           <Route exact path="/hook" component={Hook} />
           <Route exact path="/map" component={GoogleMap} />
+          <Route
+            exact
+            path="/nuevoprofesional"
+            component={Registro_profesional}
+          />
         </Switch>
       </>
     );
